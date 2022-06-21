@@ -6,7 +6,7 @@
 # @Copyright: 北京码同学
 
 import requests
-
+import jsonpath
 session = requests.session()
 
 def login(userName='shamo',password='123456'):
@@ -28,7 +28,7 @@ def login(userName='shamo',password='123456'):
     # 提取token
     global token
     # token = resp.json()['data']
-    import jsonpath
+
     # 第一个参数表示要解析的目标对象
     # 第二个参数你要提取的数据对应的jsonpath表达式
     # 注意如果表达式能够匹配到数据，不管是1个还是多个，返回结果都是列表，所以最后我们加了一个[0]

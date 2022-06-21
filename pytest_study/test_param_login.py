@@ -19,7 +19,11 @@ from requests_study.cookie_study import login
 #     ['shamo','',      200,'1','参数为空']
 # ]
 # test_data = read_excel(r'D:\pycharmprojects\testpro1\datadriver_study\test_data.xlsx','登录接口数据')
-test_data = read_yaml(r'D:\pycharmprojects\testpro1\datadriver_study\test_data.yml')['登录接口数据']
+#正确的
+# test_data = read_yaml(r'E:\DocumentWork\projectPython\github-xiaomage-api-test\datadriver_study\test_data.yml')['登录接口数据']
+#正确的
+# test_data = read_yaml(r'..\datadriver_study\test_data.yml')['登录接口数据']
+test_data = read_yaml(r'../datadriver_study/test_data.yml')['登录接口数据']
 # 第二步，使用pytest装饰器，读取上述数据，将其传递给测试用例函数
 @pytest.mark.parametrize('userName,password,expect_status_code,expect_code,expect_message',test_data)
 def test_login(userName,password,expect_status_code,expect_code,expect_message):

@@ -9,6 +9,17 @@ from jsonpath_rw_ext import parse
 
 
 def update_value_to_json(json_object,json_path,new_value):
+    '''
+    修改json中某个字段的内容
+    比如:
+    把userName替换成空字符串
+    update_value_to_json(json, '$.userName', '')
+
+    :param json_object:
+    :param json_path:
+    :param new_value:
+    :return:
+    '''
     json_path_expr = parse(json_path)
 
     for match in json_path_expr.find(json_object):
